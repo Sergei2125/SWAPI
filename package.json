@@ -1,0 +1,33 @@
+{
+  "name": "css-to-scss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack s --mode development --open",
+    "build": "cross-env NODE_ENV=production webpack --mode production"
+  },
+  "keywords": [
+    "template",
+    "webpack",
+    "scss"
+  ],
+  "author": "Maxim Shchutsky <maximuzz@yandex.ru> (https://maximsan.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-webpack-plugin": "4.0.0",
+    "cross-env": "7.0.3",
+    "css-loader": "6.3.0",
+    "html-webpack-plugin": "5.3.2",
+    "mini-css-extract-plugin": "2.3.0",
+    "node-sass": "6.0.1",
+    "sass-loader": "12.1.0",
+    "style-loader": "3.3.0",
+    "webpack": "5.55.1",
+    "webpack-cli": "4.8.0",
+    "webpack-dev-server": "4.3.0"
+  },
+  "dependencies": {
+    "axios": "^0.23.0"
+  }
+}
