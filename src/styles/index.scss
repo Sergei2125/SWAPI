@@ -2,10 +2,17 @@
 @import "header";
 @import "nav-bar";
 
+$background: rgb(228, 247, 212);
+
 * {
   box-sizing: border-box;
 }
-
+.wrapper {
+  background-color: $background;
+}
 .accordion {
   margin: 20px auto;
+}
+.accordion-button {
+  padding: 0.8rem 1.25rem;
 }
