@@ -12,7 +12,7 @@
     "webpack",
     "scss"
   ],
-  "author": "Maxim Shchutsky <maximuzz@yandex.ru> (https://maximsan.com/)",
+  "author": "Sergey Chueshkov",
   "license": "MIT",
   "devDependencies": {
     "clean-webpack-plugin": "4.0.0",
