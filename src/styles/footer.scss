@@ -1,0 +1,25 @@
+@import "colors";
+
+.pagination {
+  padding-bottom: 1rem;
+}
+.page-item {
+  background-color: rgba($color: #fff, $alpha: 0) !important;
+}
+.page-link {
+  color: $yellow;
+  background-color: rgba($color: #fff, $alpha: 0) !important;
+  border: none;
+}
+.page-item.active .page-link {
+  color: $yellow;
+  background-color: rgba($color: #fff, $alpha: 0) !important;
+  box-shadow: inset 0px 0px 8px 1px $blue;
+  border-radius: 5px 0px 5px 5px;
+}
+.page-link:hover {
+  color: $yellow;
+  background-color: rgba($color: #fff, $alpha: 0) !important;
+  box-shadow: inset 0px 0px 8px 1px $yellow;
+  border-radius: 5px 0px 5px 5px;
+}

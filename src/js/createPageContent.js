@@ -42,16 +42,16 @@ const createArrayOfData = (dataArray) => {
       </button>
     </h2>
     <div id="flush-collapse${index}" class="accordion-collapse collapse" aria-labelledby="flush-heading${index}" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">${keysValueObj[1]}: ${
+      <div class="accordion-body"><span>${keysValueObj[1]}:</span> ${
         itemArray[keysValueObj[1]]
       }</div>
-      <div class="accordion-body">${keysValueObj[2]}: ${
+      <div class="accordion-body"><span>${keysValueObj[2]}:</span> ${
         itemArray[keysValueObj[2]]
       }</div>
-      <div class="accordion-body">${keysValueObj[3]}: ${
+      <div class="accordion-body"><span>${keysValueObj[3]}:</span> ${
         itemArray[keysValueObj[3]]
       }</div>
-      <div class="accordion-body">${keysValueObj[4]}: ${
+      <div class="accordion-body"><span>${keysValueObj[4]}:</span> ${
         itemArray[keysValueObj[4]]
       }</div>`;
 

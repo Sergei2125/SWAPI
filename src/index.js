@@ -1,16 +1,15 @@
 import "./styles/index.scss";
 
 const pagination = document.querySelector(".pagination");
+const navbar = document.querySelector(".navbar");
+const formInputValue = document.querySelector(".form-control");
+const form = document.querySelector(".d-flex");
 
 let getData = require("./js/getData.js");
 let getContentFromPage = require("./js/getContentFromPage.js");
 let getDataFromMenu = require("./js/getDataFromMenu.js");
 let getSearchResult = require("./js/getResultOfSearch.js");
 let takeDataFromLocalStorage = require("./js/takeDataFromLocalStorage.js");
-
-const dropDownMenu = document.querySelector(".dropdown-menu");
-const formInputValue = document.querySelector(".form-control");
-const form = document.querySelector(".d-flex");
 
 let currentContent = "people";
 let currentPage = 1;
@@ -24,13 +23,20 @@ if (localStorage[currentUrl]) {
 }
 
 pagination.addEventListener("click", (event) => {
-  currentPage = event.target.textContent;
-  getContentFromPage(currentContent, currentPage);
+  const targetTeg = event.target;
+  if (targetTeg.tagName === "A") {
+    currentPage = targetTeg.textContent;
+    getContentFromPage(currentContent, currentPage);
+  }
 });
 
-dropDownMenu.addEventListener("click", (event) => {
-  currentContent = event.target.textContent.toLowerCase();
-  getDataFromMenu(currentContent);
+navbar.addEventListener("click", (event) => {
+  const targetTeg = event.target;
+  console.log(targetTeg);
+  if (targetTeg.tagName === "A") {
+    currentContent = targetTeg.textContent.toLowerCase();
+    getDataFromMenu(currentContent);
+  }
 });
 
 form.addEventListener("submit", (e) => {
@@ -43,5 +49,3 @@ formInputValue.addEventListener("search", () => {
   searchValue = "";
   takeDataFromLocalStorage(currentUrl);
 });
-
-// export { itemsList, itemPages };

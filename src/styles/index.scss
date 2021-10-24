@@ -1,18 +1,50 @@
+@import "reset";
 @import "colors";
 @import "header";
-@import "nav-bar";
-
-$background: rgb(228, 247, 212);
+@import "footer";
+@import "stylesheet";
 
 * {
   box-sizing: border-box;
 }
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
 .wrapper {
-  background-color: $background;
+  background: url("../images/1920x1080.jpg");
+  background-repeat: repeat-y;
+  background-position: top center;
+}
+.accordion-header {
+  box-shadow: inset 0px 0px 20px 2px $yellow;
+  border-radius: 15px 0px 15px 15px;
+}
+.accordion-header:hover {
+  box-shadow: inset 0px 0px 20px 2px $blue;
+  transition: ease 0.3s;
+}
+.accordion-item {
+  background-color: rgba($color: #fff, $alpha: 0) !important;
+  color: $white !important;
+  margin: 15px;
+  width: 300px;
+}
+.accordion-button {
+  background-color: rgba($color: #fff, $alpha: 0) !important;
+  color: $white !important;
+  height: 70px;
+  border-radius: 15px 0px 15px 15px;
 }
 .accordion {
   margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .accordion-button {
   padding: 0.8rem 1.25rem;
+}
+.accordion-body span {
+  color: $yellow;
+  text-transform: uppercase;
 }
