@@ -11,40 +11,73 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 .wrapper {
+  animation: wrapper 70s ease-in-out infinite;
   background: url("../images/1920x1080.jpg");
   background-repeat: repeat-y;
   background-position: top center;
+  background-attachment: fixed;
 }
-.accordion-header {
-  box-shadow: inset 0px 0px 20px 2px $yellow;
-  border-radius: 15px 0px 15px 15px;
+@keyframes wrapper {
+  0% {
+    background-size: 120%;
+    background-position: 50% 50%;
+  }
+  25% {
+    background-size: 120%;
+    background-position: 40% 70%;
+  }
+  50% {
+    background-size: 120%;
+    background-position: 60% 40%;
+  }
+  75% {
+    background-size: 120%;
+    background-position: 40% 70%;
+  }
+  100% {
+    background-size: 120%;
+    background-position: 50% 50%;
+  }
 }
-.accordion-header:hover {
-  box-shadow: inset 0px 0px 20px 2px $blue;
-  transition: ease 0.3s;
-}
-.accordion-item {
-  background-color: rgba($color: #fff, $alpha: 0) !important;
-  color: $white !important;
-  margin: 15px;
-  width: 300px;
-}
-.accordion-button {
-  background-color: rgba($color: #fff, $alpha: 0) !important;
-  color: $white !important;
-  height: 70px;
-  border-radius: 15px 0px 15px 15px;
-}
+
 .accordion {
   margin: 20px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.accordion-button {
-  padding: 0.8rem 1.25rem;
+
+.accordion-item {
+  background-color: rgba($color: #fff, $alpha: 0) !important;
+  color: $white !important;
+  margin: 15px;
+  width: 300px;
+}
+
+.accordion-header {
+  box-shadow: inset 0px 0px 20px 2px $yellow;
+  border-radius: 15px 0px 15px 15px;
+}
+.accordion-header .accordion-button:not(.collapsed) {
+  box-shadow: inset 0px 0px 20px 2px $purple;
+}
+.accordion-header:hover {
+  box-shadow: inset 0px 0px 20px 2px $purple;
+  transition: ease 0.3s;
+}
+.accordion-body {
+  line-height: 1.4rem;
 }
 .accordion-body span {
   color: $yellow;
   text-transform: uppercase;
+}
+
+.accordion-button {
+  background-color: rgba($color: #fff, $alpha: 0) !important;
+  color: $white !important;
+  font-size: 1.2rem;
+  height: 70px;
+  border-radius: 15px 0px 15px 15px;
+  padding: 0.8rem 1.25rem;
 }

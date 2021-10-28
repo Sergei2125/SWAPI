@@ -1,4 +1,4 @@
-let createPageContent = require("./createPageContent.js");
+const createPageContent = require("./createPageContent.js");
 
 const takeDataFromLocalStorage = (requestUrl, currentPage = 1) => {
   const dataFromLocalStorage = localStorage.getItem(requestUrl);

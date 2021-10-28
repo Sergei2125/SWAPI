@@ -1,38 +1,107 @@
 @import "colors";
 
-.nav-link {
-  color: $yellow !important;
-}
 .bg-light {
   background-color: rgba($color: #fff, $alpha: 0.1) !important;
 }
 .header {
   border-bottom: 3px solid $blue;
+
+  &__title {
+    font-family: "Zen Tokyo Zoo", cursive !important;
+    color: $yellow;
+    font-size: 4rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding-right: 3rem;
+  }
+  &__title-mobile {
+    display: none;
+  }
 }
-.title {
-  font-family: "Zen Tokyo Zoo", cursive !important;
-  color: $yellow;
-  font-size: 4rem;
-  padding: 0.5rem 0;
-  text-align: center;
+
+.navbar {
+  padding-top: 1rem;
 }
+
+.navbar-toggler {
+  background: $yellow;
+}
+
 .nav-link {
+  color: $yellow !important;
   text-transform: uppercase;
   font-family: "SairaStencilOne";
+  border: 2px solid rgba($color: #fff, $alpha: 0) !important;
+  font-size: 1.3rem;
+  margin: 3px;
 }
+
+.nav-link:hover,
+.nav-link:focus {
+  border: 2px solid $blue !important;
+  border-radius: 10px 0px 10px 10px;
+  box-shadow: inset 0px 0px 5px 2px $blue;
+  outline: inherit;
+}
+
+.activeMenu {
+  border: 2px solid $blue !important;
+  border-radius: 10px 0px 10px 10px;
+  box-shadow: inset 0px 0px 5px 2px $blue;
+}
+
 .btn-outline-success {
   color: $yellow;
   border-color: $blue;
 }
+
 .btn-outline-success:hover {
   background-color: rgba($color: #fff, $alpha: 0) !important;
   box-shadow: inset 0px 0px 10px 2px $blue;
   transition: ease 0.3s;
 }
+
 .form-control:hover {
   box-shadow: inset 0px 0px 10px 2px $blue;
   transition: ease 0.3s;
 }
-.navbar-toggler {
-  background: $yellow;
+
+.d-flex {
+  margin-left: 10px;
+}
+
+@media (max-width: 1200px) {
+  .header__title {
+    font-size: 2.5rem;
+    padding-right: 1rem;
+  }
+  .nav-link {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .header__title {
+    display: none;
+  }
+  .header__title-mobile {
+    display: block;
+    position: absolute;
+    top: 1.1rem;
+    left: calc(50% - 4.3rem);
+    font-family: "Zen Tokyo Zoo", cursive !important;
+    color: $yellow;
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .nav-link {
+    text-align: center;
+  }
+  .nav-link {
+    padding: 0.5rem 5rem !important;
+  }
+  .navbar-nav {
+    align-items: center;
+  }
 }

@@ -1,14 +1,16 @@
 const pagination = document.querySelector(".pagination");
 const accordion = document.querySelector(".accordion");
 
+//clear main content from page
+
 const clearPageContent = () => {
   const itemsList = document.querySelectorAll(".accordion-item");
-  const itemPages = document.querySelectorAll(".page-item");
+  const numbersPages = document.querySelectorAll(".page-item");
 
   itemsList.forEach((elem) => {
     elem.remove();
   });
-  itemPages.forEach((elem) => {
+  numbersPages.forEach((elem) => {
     elem.remove();
   });
 };
@@ -16,6 +18,8 @@ const clearPageContent = () => {
 const createArrayOfData = (dataArray) => {
   const numberShownValues = 5;
   const firstElementOfArray = dataArray[0];
+
+  // get first five key of object
 
   const keysValueObj = Object.keys(firstElementOfArray).splice(
     0,
@@ -36,28 +40,27 @@ const createArrayOfData = (dataArray) => {
     accordion.append(message);
   } else {
     dataArray.map((itemArray, index) => {
-      const itemArrayContent = `<h2 class="accordion-header" id="flush-heading${index}">
+      //Create first element in card with first key
+
+      const itemTitle = `<h2 class="accordion-header" id="flush-heading${index}">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse${index}" aria-expanded="false" aria-controls="flush-collapse${index}">
       ${itemArray[keysValueObj[0]]}
       </button>
-    </h2>
-    <div id="flush-collapse${index}" class="accordion-collapse collapse" aria-labelledby="flush-heading${index}" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body"><span>${keysValueObj[1]}:</span> ${
-        itemArray[keysValueObj[1]]
-      }</div>
-      <div class="accordion-body"><span>${keysValueObj[2]}:</span> ${
-        itemArray[keysValueObj[2]]
-      }</div>
-      <div class="accordion-body"><span>${keysValueObj[3]}:</span> ${
-        itemArray[keysValueObj[3]]
-      }</div>
-      <div class="accordion-body"><span>${keysValueObj[4]}:</span> ${
-        itemArray[keysValueObj[4]]
-      }</div>`;
+    </h2>`;
+
+      //create elements of accordion card : items with key 2,3,4,5.
+
+      const itemContent = keysValueObj.slice(1).reduce((result, keyName) => {
+        return (result += `<div class="accordion-body"><span>${keyName}:</span> ${itemArray[keyName]}</div>`);
+      }, ``);
 
       const item = document.createElement("div");
       item.classList.add("accordion-item");
-      item.innerHTML = itemArrayContent;
+
+      // connect first element of card and other elements of accordion
+
+      item.innerHTML = `${itemTitle}<div id="flush-collapse${index}" class="accordion-collapse collapse" aria-labelledby="flush-heading${index}" data-bs-parent="#accordionFlushExample">${itemContent}</div>`;
+
       accordion.append(item);
     });
   }
@@ -81,7 +84,7 @@ const createPagination = (numberPage, currentPage) => {
   });
 };
 
-const createPageContent = (dataArray, numberPage, currentPage) => {
+const createPageContent = (dataArray, numberPage, currentPage = 1) => {
   clearPageContent();
   createArrayOfData(dataArray);
   createPagination(numberPage, currentPage);

@@ -1,8 +1,8 @@
-let getData = require("./getData.js");
-let takeDataFromLocalStorage = require("./takeDataFromLocalStorage.js");
+const getData = require("./getData.js");
+const takeDataFromLocalStorage = require("./takeDataFromLocalStorage.js");
 
-const getContentFromPage = (currentContent, currentPage) => {
-  const requestUrl = `${currentContent}/?page=${currentPage}`;
+const getContentFromPage = (pathForData, currentPage = 1) => {
+  const requestUrl = `${pathForData}${currentPage}`;
   if (localStorage[requestUrl]) {
     takeDataFromLocalStorage(requestUrl, currentPage);
   } else {
