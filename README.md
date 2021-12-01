@@ -6,13 +6,10 @@
 ![javaScript](https://img.shields.io/badge/-javaScript-990033?style=for-the-badge&logo=javaScript)
 
 ***
-### Todolist application
+### Simple SPA application, which getting data from server and renders them on page.
 
-+ All tasks are displayed in the corresponding list(Todo or Completed)
-+ Ability to create / edit / delete a task
-+ Ability to mark the task as completed
-+ Sort by creation date
-+ Selection of the color theme of the application
-+ Saving tasks using localStorage
++ Data is displayed by 10 elements
++ Search by name
++ Writing data in local storage
 
 
