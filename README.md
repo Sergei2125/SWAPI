@@ -5,8 +5,6 @@
 ![](https://img.shields.io/badge/SCSS-E34F26?style=for-the-badge&logo=SCSS&logoColor=white)
 ![javaScript](https://img.shields.io/badge/-javaScript-990033?style=for-the-badge&logo=javaScript)
 
-+ SCSS
-
 ***
 ### Simple SPA application, which getting data from server and renders them on page.
 
